@@ -1,0 +1,112 @@
+/* Section4.module.css */
+
+.section4 {
+  min-height: auto;
+  display: flex;
+  font-family: "Libre Baskerville", serif;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem 2rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #12232E;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toggleSwitch {
+  width: 50px;
+  height: 25px;
+  background: #007CC7;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px;
+  position: relative;
+}
+
+.toggleKnob {
+  width: 20px;
+  height: 20px;
+  background: #12232E;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.yearly {
+  transform: translateX(25px);
+}
+
+.monthly {
+  transform: translateX(0);
+}
+
+.pricingContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.pricingCardBasic,
+.pricingCardPro,
+.pricingCardSuper {
+  background-color: #EEFBFB;
+  border-radius: 1.25rem;
+  color: #203647;
+  text-align: center;
+  padding: 2.5rem;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricingCardBasic:hover,
+.pricingCardPro:hover,
+.pricingCardSuper:hover {
+  transform: translateY(-0.75rem);
+  box-shadow: 0 10px 25px rgba(0, 124, 199, 0.35);
+}
+
+.pricingTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #12232E;
+}
+
+.pricingPrice {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #007CC7;
+  margin-bottom: 1.75rem;
+}
+
+.pricingButton {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: #007CC7;
+  color: #EEFBFB;
+  border-radius: 2.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pricingButton:hover {
+  background-color: #4DA8DA;
+}

@@ -1,0 +1,211 @@
+/* Header */
+.header {
+  height: var(--header-height, 4rem);
+  background-color: var(--header-bg, #12232E); 
+  box-shadow: var(--header-shadow, 0 2px 8px rgba(18, 35, 46, 0.15)); 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-family: "Libre Baskerville", serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+  box-shadow: var(--header-shadow-hover, 0 4px 12px rgba(18, 35, 46, 0.2)); 
+}
+
+.headerContent {
+  max-width: var(--header-max-width, 1280px);
+  width: 100%;
+  margin: 0 auto; 
+  padding: var(--header-padding, 1rem);
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Responsive Padding */
+@media (min-width: 640px) {
+  .headerContent {
+    padding: var(--header-padding-sm, 1.25rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .headerContent {
+    padding: var(--header-padding-lg, 1.5rem);
+  }
+}
+
+/* Logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--logo-gap, 1.75rem);
+  margin-left: 0; 
+  margin-right: auto; 
+}
+
+.logo {
+  width: var(--logo-width, 48px); 
+  height: var(--logo-height, 48px);
+  border-radius: var(--logo-border-radius, 50%); 
+  object-fit: contain; 
+  margin-left: -2rem;
+}
+
+.name {
+  font-size: var(--name-font-size, 1.25rem); 
+  font-weight: var(--name-font-weight, 700);
+  color: var(--name-color, white); 
+  letter-spacing: 0.02em;
+}
+
+/* Buttons */
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--button-gap, 1rem);
+  margin-right: 0;
+}
+
+.loginButton {
+  padding: var(--button-padding, 0.625rem 1.25rem);
+  background-color: var(--login-bg, transparent);
+  color: var(--login-color, white); 
+  border-radius: var(--button-border-radius, 0.5rem); 
+  border: var(--button-border, 1px solid white); 
+  cursor: pointer;
+  font-size: 1rem; 
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: var(--login-bg-hover, #007CC7);
+  color: #ffffff; 
+  transform: translateY(-2px); 
+}
+
+.loginButton:focus {
+  outline: 2px solid #007CC7; 
+  outline-offset: 2px;
+}
+
+.registerButton {
+  padding: var(--button-padding, 0.625rem 1.25rem);
+  background-color: var(--register-bg, #007CC7);
+  color: var(--register-color, #ffffff); 
+  border-radius: var(--button-border-radius, 0.5rem);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  margin-right: -2rem;
+}
+
+.registerButton:hover {
+  background-color: var(--register-bg-hover, #005f9e); 
+  color: #ffffff; 
+  transform: translateY(-2px);
+}
+
+.registerButton:focus {
+  outline: 2px solid #005f9e;
+  outline-offset: 2px;
+}
+
+.navButton {
+  position: relative;
+  padding: var(--button-padding, 0.5rem 1rem); 
+  background-color: transparent;
+  color: var(--nav-color, white);
+  border: none;
+  cursor: pointer;
+  font-size: var(--nav-font-size, 1rem);
+  font-weight: var(--nav-font-weight, 500);
+  transition: color 0.3s ease, background-color 0.3s ease; 
+  margin-left: 24px; 
+}
+
+.navButton:hover {
+  color: var(--nav-hover-color, #007CC7); 
+}
+
+.navButton::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-hover-color, #007CC7);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navButton:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navButton:focus {
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header {
+    height: var(--header-height, 3.5rem);
+  }
+
+  .logo {
+    width: var(--logo-width, 36px);
+    height: var(--logo-height, 36px);
+  }
+
+  .name {
+    font-size: var(--name-font-size, 1.125rem);
+  }
+
+  .buttonContainer {
+    gap: var(--button-gap, 0.75rem);
+    margin-right: 0; 
+  }
+
+  .loginButton,
+  .registerButton {
+    padding: var(--button-padding, 0.5rem 1rem);
+    font-size: 0.875rem; 
+  }
+
+  .navButton {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    margin-left: 12px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .headerContent {
+    flex-wrap: wrap; 
+    padding: var(--header-padding, 0.75rem);
+  }
+
+  .logoContainer {
+    gap: var(--logo-gap, 0.5rem);
+  }
+
+  .buttonContainer {
+    gap: var(--button-gap, 0.5rem);
+    margin-right: 0;
+  }
+
+  .navButton {
+    margin-left: 8px;
+  }
+}

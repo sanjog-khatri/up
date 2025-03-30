@@ -1,0 +1,15 @@
+/* styles/globals.css */
+
+/* Reset html and body to take full viewport size */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling on html/body */
+}
+
+/* Apply box-sizing globally */
+*, *:before, *:after {
+  box-sizing: border-box;
+}

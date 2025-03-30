@@ -1,0 +1,26 @@
+/* page.module.css */
+
+/* Container */
+.container {
+  --container-height: 100vh;
+  height: var(--container-height);
+  overflow-y: auto; 
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; 
+  position: relative;
+}
+
+/* Main */
+.main {
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure all sections align properly */
+.main > section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  padding-top: var(--header-height, 4rem); 
+}

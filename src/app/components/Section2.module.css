@@ -1,0 +1,242 @@
+.section2 {
+  background: white;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1800px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 3rem; 
+  line-height: 1.2;
+  color: #12232E; 
+  font-family: "Libre Baskerville", serif;
+  font-weight: 600;
+  margin-bottom: 2rem; 
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #203647; 
+  font-family: "Libre Baskerville", serif;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.learnMore,
+.signUp {
+  background-color: #007CC7; /* Already matches */
+  color: #EEFBFB; /* Already matches */
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Libre Baskerville", serif;
+  transition: background-color 0.3s ease;
+}
+
+.signUp {
+  background-color: transparent;
+  border: 2px solid #007CC7;
+  color: black;
+}
+
+.learnMore:hover,
+.signUp:hover {
+  background-color: #4DA8DA; /* Already matches */
+  color: white;
+}
+
+.cardsContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: -4rem;
+}
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.card {
+  flex: 6;
+  position: relative;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  background: #EEFBFB;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.cardInner:hover {
+  transform: translateY(-5px);
+}
+
+.iconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(18, 35, 46, 0.5); /* Already matches */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #EEFBFB; 
+}
+
+.cardTitle {
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #12232E;
+}
+
+.cardDescription {
+  line-height: 1.4;
+  font-size: 0.9rem;
+  color: #203647;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.readMore {
+  background-color: #007CC7; 
+  color: #EEFBFB; 
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: "Libre Baskerville", serif;
+  transition: background-color 0.3s ease;
+}
+
+.readMore:hover {
+  background-color: #4DA8DA; /* Already matches */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textContainer {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .heading {
+    font-size: 3rem; /* Adjusted for smaller screens */
+  }
+
+  .cardsContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .section2 {
+    padding: 2rem 1rem;
+  }
+
+  .cardInner {
+    padding: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .cardInner {
+    padding: 1rem;
+  }
+
+  .iconCircle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  .learnMore,
+  .signUp {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css"; // Import the global stylesheet
 
 export const metadata: Metadata = {
-  title: "Your App Title",
+  title: "Ultrapanel",
   description: "Your App Description",
 };
 

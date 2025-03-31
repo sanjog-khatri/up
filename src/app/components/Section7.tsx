@@ -72,7 +72,6 @@ export default function Section7({ sectionRef }: Section7Props) {
           </form>
         </div>
       </div>
-
       <div className={styles.tapeSection}>
         <div className={styles.tape}>
           {[...PARTNERS, ...PARTNERS].map((partner, index) => (

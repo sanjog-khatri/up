@@ -35,8 +35,8 @@ export default function Section3({ sectionRef }: Section3Props) {
           <Image
             src="/linux-icon.png"
             alt="Linux Icon"
-            width={200}
-            height={200}
+            width={160}
+            height={160}
             className={styles.installImg}
           />
           <div className={styles.installData}>

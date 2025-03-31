@@ -80,8 +80,8 @@ export default function Section7({ sectionRef }: Section7Props) {
               key={`${partner.src}-${index}`}
               src={partner.src}
               alt={partner.alt}
-              width={200}
-              height={100}
+              width={400}
+              height={400}
               style={{ width: "200px", height: "100px", objectFit: "contain" }}
             />
           ))}

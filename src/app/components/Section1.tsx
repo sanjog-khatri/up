@@ -32,71 +32,71 @@ export default function Section1({ sectionRef }: Section1Props) {
           <Image
             src="/circuit.png"
             alt="Circuit Core"
-            width={340}
-            height={340}
+            width={300}
+            height={300}
             className={styles.circuitImage}
           />
           <div className={styles.orbitWrapper}>
             <Image
               src="/icon1.png"
               alt="Feature 1"
-              width={180}
-              height={180}
+              width={160}
+              height={160}
               className={`${styles.orbitImage} ${styles.orbit1}`}
             />
             <Image
               src="/icon2.png"
               alt="Feature 2"
-              width={160}
+              width={140}
               height={180}
               className={`${styles.orbitImage} ${styles.orbit2}`}
             />
             <Image
               src="/icon3.png"
               alt="Feature 3"
-              width={120}
+              width={100}
               height={180}
               className={`${styles.orbitImage} ${styles.orbit3}`}
             />
             <Image
               src="/icon4.png"
               alt="Feature 4"
-              width={180}
+              width={160}
               height={180}
               className={`${styles.orbitImage} ${styles.orbit4}`}
             />
             <Image
               src="/icon5.png"
               alt="Feature 5"
-              width={100}
+              width={80}
               height={100}
               className={`${styles.orbitImage} ${styles.orbit5}`}
             />
             <Image
               src="/icon6.png"
               alt="Feature 6"
-              width={100}
+              width={80}
               height={120}
               className={`${styles.orbitImage} ${styles.orbit6}`}
             />
             <Image
               src="/icon7.png"
               alt="Feature 7"
-              width={120}
+              width={100}
               height={120}
               className={`${styles.orbitImage} ${styles.orbit7}`}
             />
             <Image
               src="/icon8.png"
               alt="Feature 8"
-              width={110}
+              width={100}
               height={60}
               className={`${styles.orbitImage} ${styles.orbit8}`}
             />
             <Image
               src="/icon9.png"
               alt="Feature 9"
-              width={150}
+              width={130}
               height={100}
               className={`${styles.orbitImage} ${styles.orbit9}`}
             />

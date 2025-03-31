@@ -1,4 +1,3 @@
-// Section6.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -34,27 +33,50 @@ const Section6: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(timer); // Cleanup on unmount
+    return () => clearInterval(timer);
   }, []);
 
+  const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+  const nextIndex = (currentIndex + 1) % testimonials.length;
+
+  const prevTestimonial = testimonials[prevIndex];
   const currentTestimonial = testimonials[currentIndex];
+  const nextTestimonial = testimonials[nextIndex];
 
   return (
     <section className={styles.section6}>
+      <h2 className={styles.testimonialsTitle}>Customer Testimonials</h2>
       {/* Testimonials Section */}
       <div className={styles.testimonialsSection}>
-        <h2 className={styles.testimonialsTitle}>Customer Testimonials</h2>
-        <p className={styles.testimonialsSubtitle}>
-          ULTRAPANEL has transformed the hosting experience completely.
-        </p>
-        <div className={styles.testimonialContainer}>
-          <div className={styles.authorImage} />
-          <p className={styles.authorName}>{currentTestimonial.name}</p>
-          <p className={styles.authorTitle}>{currentTestimonial.title}</p>
-          <div className={styles.stars}>{currentTestimonial.rating}</div>
-          <p className={styles.testimonialText}>{currentTestimonial.text}</p>
+        <div className={styles.testimonialsWrapper}>
+          {/* Previous Testimonial (Blurred) */}
+          <div className={`${styles.testimonialContainer} ${styles.blurred}`}>
+            <div className={styles.authorImage} />
+            <p className={styles.authorName}>{prevTestimonial.name}</p>
+            <p className={styles.authorTitle}>{prevTestimonial.title}</p>
+            <div className={styles.stars}>{prevTestimonial.rating}</div>
+            <p className={styles.testimonialText}>{prevTestimonial.text}</p>
+          </div>
+
+          {/* Current Testimonial (Focused) */}
+          <div className={styles.testimonialContainer}>
+            <div className={styles.authorImage} />
+            <p className={styles.authorName}>{currentTestimonial.name}</p>
+            <p className={styles.authorTitle}>{currentTestimonial.title}</p>
+            <div className={styles.stars}>{currentTestimonial.rating}</div>
+            <p className={styles.testimonialText}>{currentTestimonial.text}</p>
+          </div>
+
+          {/* Next Testimonial (Blurred) */}
+          <div className={`${styles.testimonialContainer} ${styles.blurred}`}>
+            <div className={styles.authorImage} />
+            <p className={styles.authorName}>{nextTestimonial.name}</p>
+            <p className={styles.authorTitle}>{nextTestimonial.title}</p>
+            <div className={styles.stars}>{nextTestimonial.rating}</div>
+            <p className={styles.testimonialText}>{nextTestimonial.text}</p>
+          </div>
         </div>
       </div>
 

@@ -1,150 +1,194 @@
-/* Header */
 .header {
   height: var(--header-height, 4rem);
-  background-color: var(--header-bg, #12232E); 
-  box-shadow: var(--header-shadow, 0 2px 8px rgba(18, 35, 46, 0.15)); 
+  background-color: var(--header-bg, #1A2A44);
+  box-shadow: var(--header-shadow, 0 2px 12px rgba(0, 0, 0, 0.1));
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   font-family: "Libre Baskerville", serif;
   position: sticky;
   top: 0;
-  z-index: 1000; 
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .header:hover {
-  box-shadow: var(--header-shadow-hover, 0 4px 12px rgba(18, 35, 46, 0.2)); 
+  box-shadow: var(--header-shadow-hover, 0 4px 16px rgba(0, 0, 0, 0.15));
+}
+
+.header.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Change text colors to black when the header is transparent */
+.header.transparent .name,
+.header.transparent .navButton,
+.header.transparent .loginButton
+ {
+  color: #000000; /* Black text */
+}
+
+/* Adjust the login button's border color to black when transparent */
+.header.transparent .loginButton {
+  border-color: white;
+}
+
+/* Ensure the hover effect for navButton uses a black underline when transparent */
+.header.transparent .navButton:hover {
+  color: #000000; /* Keep text black on hover */
+}
+
+.header.transparent .navButton::after {
+  background-color: #000000; /* Black underline on hover */
 }
 
 .headerContent {
-  max-width: var(--header-max-width, 1280px);
+  max-width: var(--header-max-width, 1440px);
   width: 100%;
-  margin: 0 auto; 
-  padding: var(--header-padding, 1rem);
+  margin: 0 auto;
+  padding: var(--header-padding, 1rem 2rem);
   display: flex;
-  justify-content: flex-start; 
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-/* Responsive Padding */
 @media (min-width: 640px) {
   .headerContent {
-    padding: var(--header-padding-sm, 1.25rem);
+    padding: var(--header-padding-sm, 1.25rem 2.5rem);
   }
 }
 
 @media (min-width: 1024px) {
   .headerContent {
-    padding: var(--header-padding-lg, 1.5rem);
+    padding: var(--header-padding-lg, 1.5rem 3rem);
   }
 }
 
-/* Logo */
 .logoContainer {
   display: flex;
   align-items: center;
-  gap: var(--logo-gap, 1.75rem);
-  margin-left: 0; 
-  margin-right: auto; 
+  gap: var(--logo-gap, 0.75rem);
+  margin-right: auto;
 }
 
 .logo {
-  width: var(--logo-width, 48px); 
-  height: var(--logo-height, 48px);
-  border-radius: var(--logo-border-radius, 50%); 
-  object-fit: contain; 
-  margin-left: -2rem;
+  width: var(--logo-width, 40px);
+  height: var(--logo-height, 40px);
+  border-radius: var(--logo-border-radius, 8px);
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .name {
-  font-size: var(--name-font-size, 1.25rem); 
+  font-size: var(--name-font-size, 1.5rem);
   font-weight: var(--name-font-weight, 700);
-  color: var(--name-color, white); 
-  letter-spacing: 0.02em;
+  color: var(--name-color, #FFFFFF);
+  letter-spacing: 0.03em;
 }
 
-/* Buttons */
 .buttonContainer {
   display: flex;
   align-items: center;
-  gap: var(--button-gap, 1rem);
-  margin-right: 0;
+  gap: var(--button-gap, 1.25rem);
 }
 
 .loginButton {
-  padding: var(--button-padding, 0.625rem 1.25rem);
+  padding: var(--button-padding, 0.75rem 1.5rem);
   background-color: var(--login-bg, transparent);
-  color: var(--login-color, white); 
-  border-radius: var(--button-border-radius, 0.5rem); 
-  border: var(--button-border, 1px solid white); 
+  color: var(--login-color, #FFFFFF);
+  border-radius: var(--button-border-radius, 8px);
+  border: var(--button-border, 2px solid #FFFFFF);
   cursor: pointer;
-  font-size: 1rem; 
-  font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .loginButton:hover {
-  background-color: var(--login-bg-hover, #007CC7);
-  color: #ffffff; 
-  transform: translateY(-2px); 
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.loginButton::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: var(--login-bg-hover, #4A90E2);
+  border-radius: var(--button-border-radius, 8px);
+  z-index: -1;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.loginButton:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .loginButton:focus {
-  outline: 2px solid #007CC7; 
+  outline: 3px solid #4A90E2;
   outline-offset: 2px;
 }
 
 .registerButton {
-  padding: var(--button-padding, 0.625rem 1.25rem);
-  background-color: var(--register-bg, #007CC7);
-  color: var(--register-color, #ffffff); 
-  border-radius: var(--button-border-radius, 0.5rem);
+  padding: var(--button-padding, 0.75rem 1.5rem);
+  background-color: var(--register-bg, #4A90E2);
+  color: var(--register-color, #FFFFFF);
+  border-radius: var(--button-border-radius, 8px);
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  margin-right: -2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .registerButton:hover {
-  background-color: var(--register-bg-hover, #005f9e); 
-  color: #ffffff; 
+  background-color: var(--register-bg-hover, #357ABD);
   transform: translateY(-2px);
 }
 
 .registerButton:focus {
-  outline: 2px solid #005f9e;
+  outline: 3px solid #357ABD;
   outline-offset: 2px;
 }
 
 .navButton {
-  position: relative;
-  padding: var(--button-padding, 0.5rem 1rem); 
+  padding: var(--button-padding, 0.75rem 1rem);
   background-color: transparent;
-  color: var(--nav-color, white);
+  color: var(--nav-color, #FFFFFF);
   border: none;
   cursor: pointer;
   font-size: var(--nav-font-size, 1rem);
-  font-weight: var(--nav-font-weight, 500);
-  transition: color 0.3s ease, background-color 0.3s ease; 
-  margin-left: 24px; 
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .navButton:hover {
-  color: var(--nav-hover-color, #007CC7); 
+  color: var(--nav-hover-color, #4A90E2);
 }
 
 .navButton::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: -4px;
   width: 0;
   height: 2px;
-  background-color: var(--nav-hover-color, #007CC7);
+  background-color: var(--nav-hover-color, #4A90E2);
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -153,47 +197,40 @@
   left: 0;
 }
 
-.navButton:focus {
-  outline-offset: 2px;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .header {
     height: var(--header-height, 3.5rem);
   }
 
   .logo {
-    width: var(--logo-width, 36px);
-    height: var(--logo-height, 36px);
+    width: var(--logo-width, 32px);
+    height: var(--logo-height, 32px);
   }
 
   .name {
-    font-size: var(--name-font-size, 1.125rem);
+    font-size: var(--name-font-size, 1.25rem);
   }
 
   .buttonContainer {
     gap: var(--button-gap, 0.75rem);
-    margin-right: 0; 
   }
 
   .loginButton,
   .registerButton {
-    padding: var(--button-padding, 0.5rem 1rem);
-    font-size: 0.875rem; 
+    padding: var(--button-padding, 0.625rem 1.25rem);
+    font-size: 0.875rem;
   }
 
   .navButton {
+    padding: 0.625rem;
     font-size: 0.875rem;
-    padding: 0.5rem;
-    margin-left: 12px; 
   }
 }
 
 @media (max-width: 480px) {
   .headerContent {
-    flex-wrap: wrap; 
-    padding: var(--header-padding, 0.75rem);
+    flex-wrap: wrap;
+    padding: var(--header-padding, 0.75rem 1rem);
   }
 
   .logoContainer {
@@ -202,10 +239,9 @@
 
   .buttonContainer {
     gap: var(--button-gap, 0.5rem);
-    margin-right: 0;
   }
 
   .navButton {
-    margin-left: 8px;
+    padding: 0.5rem;
   }
 }

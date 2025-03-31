@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./Header.module.css";
 import { RefObject, useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   scrollToSection: (ref: RefObject<HTMLElement | null>) => void;
@@ -14,6 +14,7 @@ interface HeaderProps {
   section5Ref: RefObject<HTMLElement | null>;
   section6Ref: RefObject<HTMLElement | null>;
   section7Ref: RefObject<HTMLElement | null>;
+  isTransparent: boolean; // Add the new prop
 }
 
 export default function Header({
@@ -24,11 +25,12 @@ export default function Header({
   section4Ref,
   section5Ref,
   section6Ref,
-  section7Ref
+  section7Ref,
+  isTransparent,
 }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const router = useRouter(); 
+  const router = useRouter();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -54,7 +56,9 @@ export default function Header({
   return (
     <header
       ref={headerRef}
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+        isTransparent ? styles.transparent : ""
+      }`}
     >
       <div className={styles.headerContent}>
         <div className={styles.logoContainer}>
@@ -64,7 +68,7 @@ export default function Header({
             width={40}
             height={40}
             className={styles.logo}
-            priority // Preload logo for better LCP
+            priority
           />
           <span className={styles.name}>Ultrapanel</span>
           <nav className={styles.nav}>

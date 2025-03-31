@@ -6,21 +6,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
   scroll-snap-align: start;
-  background: white;
-  position: relative;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F3F4F6 100%);  position: relative;
   overflow: hidden;
-  margin-bottom: -6rem;
+  margin-bottom: -4.5rem ;
 }
 
 .content {
   display: flex;
   justify-content: space-between;
+  padding-left: 40px;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1440px;
   width: 100%;
-  gap: 2rem;
+  gap: 1rem;
   z-index: 2;
 }
 
@@ -28,75 +27,103 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  max-width: 600px;
+  max-width: 640px;
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
-  color: #12232E;
-  text-shadow: 0 2px 4px rgba(238, 251, 251, 0.2);
-  line-height: 1.5;
+  color: #1A2A44;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
   max-width: 100%;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
+  padding-bottom: 3rem;
 }
 
 .titleHighlight {
-  color: #007CC7;
+  color: #4A90E2;
+  background: linear-gradient(90deg, #4A90E2, #357ABD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: #203647;
-  opacity: 0.9;
+  font-size: 1.5rem;
+  color: #374151;
+  opacity: 0.85;
   max-width: 100%;
   overflow-wrap: break-word;
+  padding-bottom: 3rem;
 }
 
 .buttonContainer {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem; 
+  margin-top: 0.75rem; 
 }
 
 .watchDemoButton {
-  padding: 1rem 2rem;
-  background-color: #007CC7; /* Lighter Blue - Button */
-  color: #EEFBFB; /* Shadow of Light Blue - Text */
-  border: 2px solid #EEFBFB; /* Shadow of Light Blue - Border */
-  border-radius: 2rem;
+  padding: 1rem 2.25rem;
+  background-color: #4A90E2;
+  color: #FFFFFF;
+  border: 2px solid transparent; 
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.4s ease;
+  font-size: 1.125rem;
+  position: relative; 
+  overflow: hidden; 
+  transition: all 0.3s ease;
 }
 
 .watchDemoButton:hover {
-  background-color: #4DA8DA;
-  border-color: #12232E;
-  box-shadow: 0 4px 12px rgba(0, 124, 199, 0.3);
+  border: 2px solid #357ABD; 
   transform: translateY(-2px);
 }
 
 .downloadButton {
-  padding: 1rem 2rem;
-  background-color: #12232E;
-  color: #EEFBFB;
-  border: 2px solid #12232E;
-  border-radius: 2rem;
+  padding: var(--button-padding, 1rem 2.25rem);
+  background-color: var(--download-bg, transparent);
+  color: var(--download-color, #357ABD);
+  border-radius: var(--button-border-radius, 12px);
+  border: var(--button-border, 2px solid #357ABD);
   cursor: pointer;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.4s ease;
+  font-size: 1.125rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .downloadButton:hover {
-  background-color: #007CC7;
-  box-shadow: 0 4px 12px rgba(0, 124, 199, 0.3);
+  background-color: transparent;
+  color: white;
+  border-color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(77, 168, 218, 0.3); /* Lightest Blue shadow */
 }
 
+.downloadButton::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: var(--download-bg-hover, #4A90E2);
+  border-radius: var(--button-border-radius, 12px);
+  z-index: -1;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.downloadButton:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Reverted Right Section to Original */
 .imageContainer {
   position: relative;
   flex: 1;
@@ -104,8 +131,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 600px; /* Constrain the width to prevent overflow */
-  overflow: hidden; /* Hide any overflow from orbiting images */
+  max-width: 600px; 
+  overflow: hidden; 
+  margin-right: 1rem;
 }
 
 .circuitImage {
@@ -114,7 +142,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  max-width: 100%; /* Ensure the circuit image doesn't overflow */
+  max-width: 100%;
   height: auto;
 }
 
@@ -130,8 +158,9 @@
 .orbitImage {
   position: absolute;
   z-index: 2;
-  max-width: 100%; /* Ensure icons don't overflow */
+  max-width: 100%;
   height: auto;
+  transition: none;
 }
 
 /* Position images in a circle around the circuit (9 images, 40° apart) */
@@ -181,18 +210,30 @@
   transform: translate(-50%, -50%) rotate(320deg) translateX(250px) rotate(-320deg);
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
+@media (min-width: 640px) {
+  .section1 {
+    padding: 6rem 1.25rem; /* Match header's sm padding */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section1 {
+    padding: 6rem 1.5rem; /* Match header's lg padding */
+  }
+}
+
 @media (max-width: 1200px) {
   .content {
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
   }
   .imageContainer {
-    max-width: 500px; /* Reduce max-width */
+    max-width: 500px;
     height: 500px;
   }
   .orbit1 { transform: translate(-50%, -50%) translateX(200px); }
-  .orbit2 { transform: translate(-50%, -50%) rotate(40deg) translate Facet (200px) rotate(-40deg); }
+  .orbit2 { transform: translate(-50%, -50%) rotate(40deg) translateX(200px) rotate(-40deg); }
   .orbit3 { transform: translate(-50%, -50%) rotate(80deg) translateX(200px) rotate(-80deg); }
   .orbit4 { transform: translate(-50%, -50%) rotate(120deg) translateX(200px) rotate(-120deg); }
   .orbit5 { transform: translate(-50%, -50%) rotate(160deg) translateX(200px) rotate(-160deg); }
@@ -203,15 +244,14 @@
 }
 
 @media (max-width: 1024px) {
-  .content {
-    flex-direction: column;
-    gap: 3rem;
-  }
   .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
   }
   .imageContainer {
-    max-width: 400px; /* Reduce max-width */
+    max-width: 400px;
     height: 400px;
   }
   .orbit1 { transform: translate(-50%, -50%) translateX(150px); }
@@ -226,25 +266,33 @@
 }
 
 @media (max-width: 768px) {
+  .section1 {
+    padding: 4rem 1.25rem;
+  }
   .title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   .buttonContainer {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+  .watchDemoButton,
+  .downloadButton {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
   }
   .imageContainer {
-    max-width: 300px; /* Reduce max-width */
+    max-width: 300px;
     height: 300px;
   }
   .orbit1 { transform: translate(-50%, -50%) translateX(100px); }
   .orbit2 { transform: translate(-50%, -50%) rotate(40deg) translateX(100px) rotate(-40deg); }
   .orbit3 { transform: translate(-50%, -50%) rotate(80deg) translateX(100px) rotate(-80deg); }
   .orbit4 { transform: translate(-50%, -50%) rotate(120deg) translateX(100px) rotate(-120deg); }
-  .orbit5 { transform: translate(-50%, -50%) rotate(160deg) translateX(100px) rotate(-160deg); }
+  .orbit5 { transform: translate(-50%, -50%) rotate(160deg) translateX(100px) rotate(-80deg); }
   .orbit6 { transform: translate(-50%, -50%) rotate(200deg) translateX(100px) rotate(-200deg); }
   .orbit7 { transform: translate(-50%, -50%) rotate(240deg) translateX(100px) rotate(-240deg); }
   .orbit8 { transform: translate(-50%, -50%) rotate(280deg) translateX(100px) rotate(-280deg); }
@@ -252,14 +300,17 @@
 }
 
 @media (max-width: 480px) {
+  .section1 {
+    padding: 3rem 1rem;
+  }
   .title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .imageContainer {
-    max-width: 250px; /* Reduce max-width */
+    max-width: 250px;
     height: 250px;
   }
   .orbit1 { transform: translate(-50%, -50%) translateX(80px); }

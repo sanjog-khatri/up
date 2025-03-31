@@ -1,224 +1,280 @@
-/* Section 3 - Installation */
 .section3 {
-    min-height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; 
-    align-items: center; 
-    padding: 5rem 2rem 4rem;
-    background: white; 
-    position: relative; 
-    overflow: hidden;
-    will-change: transform;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5rem 2rem 4rem;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F3F4F6 100%);  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  font-family: "Libre Baskerville", serif;
+}
+
+.sectionTitle {
+  font-family: "Libre Baskerville", serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #1A2A44;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1.2;
+}
+
+.installContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 1rem;
+  z-index: 2;
+  margin-bottom: -2.5rem;
+}
+
+.installCard {
+  width: 380px;
+  height: 500px; /* Increased from 480px to accommodate image on hover */
+  background-color: #FFFFFF;
+  border: 2px solid #357ABD;
+  border-radius: 12px;
+  padding: 4rem 2.5rem 0;
+  color: #374151;
+  overflow-y: hidden; /* Changed to hidden to keep image inside */
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  will-change: transform;
+}
+
+.installImg {
+  position: absolute;
+  width: 160px;
+  height: auto;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  object-fit: contain;
+}
+
+.installData {
+  transform: translateY(18rem); /* Adjusted from 16rem due to taller card */
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.installTitle {
+  font-size: 1.75rem;
+  color: #1A2A44;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease-in-out, margin-bottom 0.3s ease-in-out;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.installVersion {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  color: #357ABD;
+  opacity: 0.85;
+}
+
+.installDescription {
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: #374151;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.installButton {
+  display: block;
+  width: max-content;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #357ABD;
+  border: 2px solid #357ABD;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.installButton:hover {
+  background-color: #4A90E2;
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+.installButton::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #4A90E2;
+  border-radius: 12px;
+  z-index: -1;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.installButton:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover effects */
+.installCard:hover .installImg {
+  transform: translateX(-50%) translateY(-3rem) rotate(-10deg); /* Reduced upward movement from -11rem */
+}
+
+.installCard:hover .installData {
+  transform: translateY(8rem); 
+}
+
+.installCard:hover .installTitle {
+  transform: translateX(-0.5rem);
+  margin-top: 2rem;
+}
+
+.installCard:hover .installVersion {
+  transform: translateX(-7.5rem);
+}
+
+.installCard:hover .installDescription,
+.installCard:hover .installButton {
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 640px) {
+  .section3 {
+      padding: 4rem 1.25rem;
   }
-  
-  .sectionTitle {
-    font-family: "Libre Baskerville", serif;
-    font-size: 2.75rem;
-    font-weight: 800;
-    color: #12232E; 
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 6px rgba(238, 251, 251, 0.25);
-    position: absolute;
-    top: 1.5rem; 
-    left: 50%;
-    transform: translateX(-50%); 
-  }
-  
-  .installContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.75rem;
-    max-width: 1400px;
-    width: 100%;
-    padding: 0 1rem; 
-    z-index: 2;
-    margin-bottom: -3.5rem;
-  }
-  
-  .installCard {
-    width: 380px;
-    height: 480px;
-    background-color: #EEFBFB; 
-    border: 2px solid #12232E; 
-    border-radius: 1rem;
-    padding: 4rem 2.5rem 0;
-    color: #203647; 
-    overflow-y: visible;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 6px 15px rgba(18, 35, 46, 0.4); 
-    will-change: transform;
-  }
-  
-  .installImg {
-    position: absolute;
-    width: 160px;
-    height: auto;
-    top: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: drop-shadow(0 0 25px rgba(0, 124, 199, 0.6)); 
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
-  }
-  
-  .installData {
-    transform: translateY(16rem);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .installTitle {
-    font-size: 1.75rem;
-    color: #12232E; /* Shadow of Light Blue */
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease-in-out, margin-bottom 0.3s ease-in-out;
-    font-weight: 800;
-  }
-  
-  .installVersion {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease-in-out;
-    color: #007CC7; /* Lightest Blue */
-    opacity: 0.95;
-  }
-  
-  .installDescription {
-    font-size: 1.3rem;
-    text-align: initial;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    color: #203647; /* Lightest Blue */
-    font-weight: 300;
-  }
-  
-  .installButton {
-    display: block;
-    width: max-content;
-    padding: 1.25rem 2.5rem;
-    background-color: #007CC7; /* Lighter Blue */
-    color: #EEFBFB; /* Shadow of Light Blue */
-    border-radius: 2.5rem;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 2px solid #12232E; /* Shadow of Light Blue */
-  }
-  
-  .installButton:hover {
-    background-color: #4DA8DA; /* Lightest Blue */
-    border-color: #12232E; /* Lighter Blue */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 124, 199, 0.4); 
-    opacity: 1;
-  }
-  
-  /* Hover effects */
-  .installCard:hover .installImg {
-    transform: translate(0.5rem, -11rem) translateX(-50%) rotate(-20deg);
-  }
-  
-  .installCard:hover .installData {
-    transform: translateY(6rem);
-  }
-  
-  .installCard:hover .installTitle {
-    transform: translateX(-2.5rem);
-    margin-bottom: 0;
-  }
-  
-  .installCard:hover .installVersion {
-    transform: translateX(-7.5rem);
-  }
-  
-  .installCard:hover .installDescription,
-  .installCard:hover .installButton {
-    transition-delay: 0.2s;
-    opacity: 1;
-  }
-  
-  /* Media Queries */
-  @media (max-width: 1024px) {
-    .section3 {
+}
+
+@media (min-width: 1024px) {
+  .section3 {
       padding: 4rem 1.5rem;
-    }
-    .installContainer {
-      gap: 2.5rem;
-    }
-    .installCard {
-      width: 350px;
-      height: 450px;
-    }
-    .installImg {
-      width: 250px;
-    }
-    .installData {
-      transform: translateY(14rem);
-    }
-    .installCard:hover .installData {
-      transform: translateY(5rem);
-    }
-    .sectionTitle {
-      font-size: 2.75rem;
-    }
   }
-  
-  @media (max-width: 768px) {
-    .section3 {
-      padding: 3.5rem 1rem;
+}
+
+@media (max-width: 1024px) {
+  .section3 {
+      padding: 4rem 1.5rem;
+  }
+  .installCard {
+      width: 350px;
+      height: 520px; /* Increased from 450px */
+  }
+  .installImg {
+      width: 140px;
+  }
+  .installData {
+      transform: translateY(16rem); /* Adjusted from 14rem */
+  }
+  .installCard:hover .installData {
+      transform: translateY(7rem); /* Adjusted from 5rem */
+  }
+  .sectionTitle {
+      font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section3 {
+      padding: 3rem 1.25rem;
       min-height: auto;
-    }
-    .installCard {
+  }
+  .installCard {
       width: 100%;
       max-width: 400px;
-      height: 400px;
-    }
-    .installImg {
-      width: 200px;
-    }
-    .installData {
-      transform: translateY(12rem);
-    }
-    .installCard:hover .installData {
-      transform: translateY(4rem);
-    }
-    .sectionTitle {
+      height: 480px; /* Increased from 400px */
+  }
+  .installImg {
+      width: 120px;
+  }
+  .installData {
+      transform: translateY(14rem); /* Adjusted from 12rem */
+  }
+  .installCard:hover .installData {
+      transform: translateY(6rem); /* Adjusted from 4rem */
+  }
+  .sectionTitle {
       font-size: 2.25rem;
-    }
-    .installDescription {
-      font-size: 1.1rem;
-    }
-    .installButton {
-      padding: 1rem 2.25rem;
-    }
   }
-  
-  @media (max-width: 480px) {
-    .sectionTitle {
-      font-size: 1.75rem;
-    }
-    .installDescription {
-      font-size: 1rem;
-    }
-    .installTitle {
+  .installTitle {
       font-size: 1.5rem;
-    }
-    .installVersion {
-      font-size: 1.25rem;
-    }
-    .installButton {
-      padding: 0.9rem 2rem;
-    }
   }
+  .installDescription {
+      font-size: 1rem;
+  }
+  .installButton {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section3 {
+      padding: 2rem 1rem;
+  }
+  .sectionTitle {
+      font-size: 1.75rem;
+  }
+  .installTitle {
+      font-size: 1.3rem;
+  }
+  .installVersion {
+      font-size: 1.25rem;
+  }
+  .installDescription {
+      font-size: 0.9rem;
+  }
+  .installButton {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+  }
+  .installImg {
+      width: 100px;
+  }
+  .installCard {
+      height: 440px; /* Adjusted */
+  }
+  .installData {
+      transform: translateY(12rem);
+  }
+  .installCard:hover .installData {
+      transform: translateY(5rem);
+  }
+}

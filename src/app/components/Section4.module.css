@@ -1,24 +1,37 @@
-/* Section4.module.css */
-
 .section4 {
-  min-height: auto;
+  min-height: 100vh; /* Aligned with Section3 */
   display: flex;
   font-family: "Libre Baskerville", serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 2rem 2rem;
-  background: white;
+  padding: 5rem 2rem 4rem; /* Aligned with Section3 */
+  background: linear-gradient(145deg, #F3F4F6 0%, #D1D5DB 100%);
   position: relative;
   overflow: hidden;
+  will-change: transform; /* Aligned with Section3 */
 }
 
 .sectionTitle {
-  font-size: 2.75rem;
-  font-weight: 800;
-  color: #12232E;
+  font-family: "Libre Baskerville", serif;
+  font-size: 4rem; /* Aligned with Section3 */
+  font-weight: 800; /* Aligned with Section3 */
+  color: #1A2A44; /* Aligned with Section3 */
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem; /* Reduced to bring subtitle closer */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Aligned with Section3 */
+  line-height: 1.2; /* Aligned with Section3 */
+}
+
+.sectionSubtitle {
+  font-size: 1.5rem; /* Aligned with installVersion for secondary text */
+  font-weight: 300; /* Lighter, aligned with installDescription */
+  color: #374151; /* Aligned with Section3 text color */
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  opacity: 0.85; /* Aligned with installVersion opacity */
+  line-height: 1.5; /* Aligned with installDescription */
 }
 
 .toggleContainer {
@@ -31,7 +44,7 @@
 .toggleSwitch {
   width: 50px;
   height: 25px;
-  background: #007CC7;
+  background: #ccc;
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -43,7 +56,7 @@
 .toggleKnob {
   width: 20px;
   height: 20px;
-  background: #12232E;
+  background: #fff;
   border-radius: 50%;
   position: absolute;
   transition: transform 0.3s ease;
@@ -57,56 +70,238 @@
   transform: translateX(0);
 }
 
+.active {
+  color: #1A2A44; /* Aligned with Section3 text color */
+  font-weight: 600;
+}
+
 .pricingContainer {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  align-items: flex-end; /* Align bottoms of cards */
+  gap: 32px; /* Aligned with Section3 installContainer gap */
+  flex-wrap: wrap;
+  max-width: 1440px; /* Aligned with Section3 */
+  width: 100%;
+  padding: 0 1rem;
 }
 
-.pricingCardBasic,
-.pricingCardPro,
-.pricingCardSuper {
-  background-color: #EEFBFB;
-  border-radius: 1.25rem;
-  color: #203647;
+.pricingCard {
+  background-color: #fff;
+  border-radius: 12px; 
+  border: 2px solid #357ABD; 
+  color: #374151; 
   text-align: center;
-  padding: 2.5rem;
-  max-width: 350px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px; 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  margin-top: -3rem;
 }
 
-.pricingCardBasic:hover,
-.pricingCardPro:hover,
-.pricingCardSuper:hover {
-  transform: translateY(-0.75rem);
-  box-shadow: 0 10px 25px rgba(0, 124, 199, 0.35);
+/* Adjusted heights for hierarchy */
+.solo {
+  padding: 1.5rem; /* Shortest height */
+}
+
+.upTo10 {
+  padding: 1.75rem; /* Slightly taller */
+}
+
+.upTo50 {
+  padding: 2rem; /* Medium height */
+}
+
+.upTo100 {
+  padding: 2.25rem; /* Tallest height */
+}
+
+.pricingCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .pricingTitle {
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  color: #12232E;
+  font-size: 1.75rem; /* Aligned with installTitle */
+  font-weight: 600; /* Aligned with installTitle */
+  color: #1A2A44; /* Aligned with installTitle */
+  margin-bottom: 0.5rem; /* Aligned with installTitle */
+  line-height: 1.2; /* Aligned with installTitle */
 }
 
 .pricingPrice {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #007CC7;
-  margin-bottom: 1.75rem;
+  display: block;
+  font-size: 1.5rem; /* Aligned with installVersion */
+  font-weight: 600; /* Aligned with installVersion */
+  color: #28a745; /* Kept green as per previous design */
+  margin-bottom: 1.5rem; /* Aligned with installVersion */
+  opacity: 0.85; /* Aligned with installVersion */
+}
+
+.pricingDescription {
+  font-size: 1.125rem; /* Aligned with installDescription */
+  font-weight: 300; /* Aligned with installDescription */
+  color: #374151; /* Aligned with installDescription */
+  margin-bottom: 1.5rem; /* Aligned with installDescription */
+  line-height: 1.5; /* Aligned with installDescription */
+}
+
+.pricingNote {
+  font-size: 1rem; /* Slightly smaller than pricingDescription */
+  font-weight: 300; /* Aligned with installDescription */
+  color: #374151; /* Aligned with installDescription */
+  margin-bottom: 1.5rem; /* Aligned with installDescription */
+  line-height: 1.5; /* Aligned with installDescription */
 }
 
 .pricingButton {
-  display: inline-block;
-  padding: 0.875rem 2rem;
-  background-color: #007CC7;
-  color: #EEFBFB;
-  border-radius: 2.5rem;
-  text-decoration: none;
+  display: block;
+  width: max-content;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #357ABD;
+  border: 2px solid #357ABD;
+  border-radius: 12px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+  z-index: 1; /* Added for proper layering with ::before */
 }
 
 .pricingButton:hover {
-  background-color: #4DA8DA;
+  background-color: transparent; /* Changed to show ::before animation */
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pricingButton::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #4A90E2;
+  border-radius: 12px;
+  z-index: -1;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.pricingButton:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Adjustments (aligned with Section3) */
+@media (min-width: 640px) {
+  .section4 {
+    padding: 4rem 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section4 {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section4 {
+    padding: 4rem 1.5rem;
+  }
+  .sectionTitle {
+    font-size: 3rem;
+  }
+  .sectionSubtitle {
+    font-size: 1.25rem;
+  }
+  .pricingCard {
+    width: 220px;
+  }
+  .pricingTitle {
+    font-size: 1.5rem;
+  }
+  .pricingPrice {
+    font-size: 1.25rem;
+  }
+  .pricingDescription {
+    font-size: 1rem;
+  }
+  .pricingNote {
+    font-size: 0.9rem;
+  }
+  .pricingButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section4 {
+    padding: 3rem 1.25rem;
+    min-height: auto;
+  }
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+  .sectionSubtitle {
+    font-size: 1.125rem;
+  }
+  .pricingCard {
+    width: 100%;
+    max-width: 300px;
+  }
+  .pricingTitle {
+    font-size: 1.5rem;
+  }
+  .pricingPrice {
+    font-size: 1.25rem;
+  }
+  .pricingDescription {
+    font-size: 1rem;
+  }
+  .pricingNote {
+    font-size: 0.9rem;
+  }
+  .pricingButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section4 {
+    padding: 2rem 1rem;
+  }
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+  .pricingTitle {
+    font-size: 1.3rem;
+  }
+  .pricingPrice {
+    font-size: 1.125rem;
+  }
+  .pricingDescription {
+    font-size: 0.9rem;
+  }
+  .pricingNote {
+    font-size: 0.85rem;
+  }
+  .pricingButton {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
 }

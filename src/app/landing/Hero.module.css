@@ -40,37 +40,43 @@
 
 .buttons {
   display: flex;
-  gap: 1vw;
+  gap: 20px; 
 }
 
 .getStartedButton {
-  padding: 12px 24px;
-  background-color: #000000;
-  color: #FFFFFF;
+  padding: 14px 32px; 
+  background-color: #2d3748; 
+  color: #ffffff; 
   border: none;
   border-radius: 12px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 16px; 
+  font-weight: 600; 
   cursor: pointer;
+  transition: all 0.3s ease; 
 }
 
 .getStartedButton:hover {
-  background-color: #333;
+  background-color: #1a202c;
+  transform: translateY(-2px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .learnMoreButton {
-  padding: 12px 24px;
-  background-color: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  padding: 14px 32px; 
+  background-color: transparent; 
+  color: #2d3748; 
+  border: 2px solid #2d3748; 
   border-radius: 12px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 16px; 
+  font-weight: 600; 
   cursor: pointer;
+  transition: all 0.3s ease; 
 }
 
 .learnMoreButton:hover {
-  background-color: #f1f1f1;
+  background-color: #2d3748; 
+  color: #ffffff; 
+  transform: translateY(-2px); 
 }
 
 .imageGrid {
@@ -92,10 +98,10 @@
   margin-bottom: 1.5vh;
 }
 
-.imagePlaceholder {
+.image {
   flex: 1;
   height: clamp(180px, 40vh, 280px);
-  background-color: #e0e0e0;
+  object-fit: cover; 
   border-radius: 8px;
 }
 
@@ -128,8 +134,25 @@
     height: 40vh;
   }
 
-  .imagePlaceholder {
+  .image {
     height: clamp(80px, 15vh, 150px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .learnMoreButton,
+  .signUpButton {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    font-size: 16px; 
   }
 }
 
@@ -142,7 +165,7 @@
     height: 30vh;
   }
 
-  .imagePlaceholder {
+  .image {
     height: clamp(60px, 10vh, 120px);
   }
 }

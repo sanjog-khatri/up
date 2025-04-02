@@ -65,35 +65,43 @@
 
 .buttons {
   display: flex;
-  gap: clamp(0.8rem, 1vw, 1rem);
+  gap: 20px; 
 }
 
 .applyButton {
-  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem);
-  border: 1px solid #000000;
+  padding: 12px 30px;
+  border: 2px solid #2d3748;
   background-color: transparent;
-  color: #000000;
+  color: #2d3748;
   border-radius: 12px;
   cursor: pointer;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .applyButton:hover {
-  background-color: #f1f1f1;
+  background-color: #2d3748;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .contactButton {
-  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem);
+  padding: 12px 30px;
   border: none;
-  background-color: #000000;
-  color: #FFFFFF;
+  background-color: #2d3748;
+  color: #ffffff;
   border-radius: 12px;
   cursor: pointer;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .contactButton:hover {
-  background-color: #333;
+  background-color: #1a202c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1024px) {

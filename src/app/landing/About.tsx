@@ -1,8 +1,44 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import styles from './About.module.css';
 
 const About = () => {
+  const images = [
+    '/about/image1.jpg',
+    '/about/image2.jpg',
+    '/about/image3.jpg',
+    '/about/image4.jpg',
+    '/about/image5.jpg',
+    '/about/image6.jpg',
+  ];
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  const handlePrev = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
+  const handleNext = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
   return (
     <section className={styles.about}>
       <div className={styles.container}>
@@ -17,8 +53,26 @@ const About = () => {
           </p>
         </div>
 
-        {/* Right Column: Image Placeholder */}
-        <div className={styles.imagePlaceholder}></div>
+        {/* Right Column: Carousel */}
+        <div className={styles.carousel}>
+          <button className={styles.navButtonPrev} onClick={handlePrev}>
+            ←
+          </button>
+          <div className={styles.imageContainer}>
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className={`${styles.imagePlaceholder} ${isTransitioning && index === currentImage ? styles.transitioning : ''}`}
+                style={{ opacity: index === currentImage ? 1 : 0 }}
+              />
+            ))}
+          </div>
+          <button className={styles.navButtonNext} onClick={handleNext}>
+            →
+          </button>
+        </div>
       </div>
     </section>
   );

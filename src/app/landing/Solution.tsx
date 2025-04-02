@@ -5,17 +5,17 @@ import styles from './Solution.module.css';
 const Solution = () => {
   const features = [
     {
-      icon: '/icons/server-config-icon.png',
+      icon: '/solution/server.png',
       title: 'Streamlined Server Configuration and Management',
       description: 'Easily manage server settings with our intuitive interface',
     },
     {
-      icon: '/icons/domain-file-icon.png',
+      icon: '/solution/domain.png',
       title: 'Effortless Domain Administration and File Handling',
       description: 'Simplify domain management and file operations seamlessly',
     },
     {
-      icon: '/icons/database-auth-icon.png',
+      icon: '/solution/database.png',
       title: 'Automated Database Access and User Authentication',
       description: 'Enhance security and access with automated solutions',
     },

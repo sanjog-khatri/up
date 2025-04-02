@@ -7,7 +7,7 @@ const Installation = () => {
   // Installation data for all operating systems
   const installationData = {
     windows: {
-      icon: '/windows-icon.png',
+      icon: '/installation/windows.png',
       alt: 'Windows',
       title: 'Windows',
       version: 'v1.0.0',
@@ -16,7 +16,7 @@ const Installation = () => {
       features: ['Compatible with Windows 10+', 'Easy setup wizard', 'Automatic updates'],
     },
     linux: {
-      icon: '/linux-icon.png',
+      icon: '/installation/linux.png',
       alt: 'Linux',
       title: 'Linux',
       version: 'v1.0.0',
@@ -25,7 +25,7 @@ const Installation = () => {
       features: ['Supports major distros', 'Lightweight installation', 'Command-line setup'],
     },
     macos: {
-      icon: '/macos-icon.png',
+      icon: '/installation/macos.png',
       alt: 'macOS',
       title: 'macOS',
       version: 'v1.0.0',
@@ -55,8 +55,8 @@ const Installation = () => {
           <Image
             src={installationData.windows.icon}
             alt={installationData.windows.alt} 
-            width={100}
-            height={100}
+            width={90}
+            height={90}
             className={styles.installImg}
             onError={() => handleImageError('Windows')}
           />

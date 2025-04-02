@@ -47,7 +47,7 @@
 }
 
 .installImg {
-  border-radius: 8px;
+  border-radius: 50%;
   margin-bottom: 20px;
   width: 100px;
   height: 100px;
@@ -55,7 +55,7 @@
   margin-left: auto;
   margin-right: auto;
   object-fit: contain;
-  background-color: #f0f0f0;
+  background-color: transparent;
 }
 
 .installData {
@@ -106,22 +106,24 @@
 }
 
 .installButton {
-  width: 100%;
-  padding: 12px;
-  background-color: #000;
-  color: #fff;
-  border: none;
+  width: 80%;
+  padding: 14px 32px; 
+  background-color: #2d3748; 
+  color: #ffffff; 
+  border: none; 
   border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 16px; 
+  font-weight: 600; 
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease; 
 }
 
 .installButton:hover {
-  background-color: #333;
+  background-color: #1a202c;
+  transform: translateY(-2px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .buttonContainer {

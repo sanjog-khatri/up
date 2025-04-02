@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './Pricing.module.css';
 
 const Pricing = () => {
@@ -87,7 +88,13 @@ const Pricing = () => {
         {/* Trial Plan */}
         <div className={styles.planCard}>
           <div className={styles.planIcon}>
-            <div className={styles.iconPlaceholder}></div>
+            <Image
+              src="/pricing/free.png"
+              alt="Trial Plan Icon"
+              width={80}
+              height={80}
+              className={styles.icon}
+            />
           </div>
           <h2 className={styles.planTitle}>Trial Plan (3 Months)</h2>
           <p className={styles.planPrice}>
@@ -106,7 +113,13 @@ const Pricing = () => {
         {/* Purchase Plan */}
         <div className={`${styles.planCard} ${styles.highlighted}`}>
           <div className={styles.planIcon}>
-            <div className={styles.iconPlaceholder}></div>
+            <Image
+              src="/pricing/paid.png"
+              alt="Purchase Plan Icon"
+              width={76}
+              height={76}
+              className={styles.icon}
+            />
           </div>
           <h2 className={styles.planTitle}>Purchase Plan</h2>
           <p className={styles.planPrice}>

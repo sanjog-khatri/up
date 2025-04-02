@@ -1,5 +1,5 @@
 .solution {
-  padding: 112px 5vw; /* Updated from 112px 0 to 112px 5vw */
+  padding: 112px 5vw; 
   background-color: #fff;
 }
 
@@ -36,7 +36,7 @@
   width: 360px;
   text-align: center;
   display: grid;
-  grid-template-rows: auto auto 1fr; /* Icon, title, description */
+  grid-template-rows: auto auto 1fr; 
   align-items: start;
 }
 
@@ -71,33 +71,41 @@
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 20px; /* Updated to match .ctaButtons gap */
 }
 
 .learnMoreButton {
-  padding: 12px 24px;
+  padding: 14px 32px; /* Matches .ctaButtons padding */
   font-size: 16px;
-  color: #fff;
-  background-color: #000;
-  border: 2px solid #000;
+  font-weight: 600; /* Added to match .ctaButtons */
+  color: #2d3748; /* Matches .ctaButtons color */
+  background: transparent;
+  border: 2px solid #2d3748; /* Matches .ctaButtons border */
   border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease; /* Matches .ctaButtons transition */
 }
 
 .learnMoreButton:hover {
-  background-color: #333;
+  background: #2d3748; /* Matches .ctaButtons hover background */
+  color: #ffffff; /* Matches .ctaButtons hover color */
+  transform: translateY(-2px); /* Matches .ctaButtons hover effect */
 }
 
 .signUpButton {
-  padding: 12px 24px;
+  padding: 14px 32px; /* Matches .ctaButtons padding */
   font-size: 16px;
-  color: black;
-  background-color: transparent;
-  border: 1px solid black;
+  font-weight: 600; /* Added to match .ctaButtons */
+  color: #ffffff; /* Matches .ctaButtons color */
+  background: #2d3748; /* Matches .ctaButtons background */
+  border: none; /* Matches .ctaButtons border */
   border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease; /* Matches .ctaButtons transition */
 }
 
 .signUpButton:hover {
-  background-color: #f1f1f1;
+  background: #1a202c; /* Matches .ctaButtons hover background */
+  transform: translateY(-2px); /* Matches .ctaButtons hover effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Matches .ctaButtons hover shadow */
 }

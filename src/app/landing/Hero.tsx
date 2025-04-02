@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -21,33 +22,105 @@ const Hero = () => {
         <div className={styles.imageWrapper}>
           {/* First set of images */}
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image1.jpg" 
+              alt="Feature 1"
+              width={200} 
+              height={150} 
+              className={styles.image}
+            />
+            <Image
+              src="/hero/image2.jpg" 
+              alt="Feature 2"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image3.jpg" 
+              alt="Feature 3"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image4.jpg" 
+              alt="Feature 4"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
+            <Image
+              src="/hero/image5.jpg" 
+              alt="Feature 5"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image6.jpg" 
+              alt="Feature 6"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           {/* Duplicate set of images for seamless looping */}
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image1.jpg"
+              alt="Feature 1"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
+            <Image
+              src="/hero/image2.jpg"
+              alt="Feature 2"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image3.jpg"
+              alt="Feature 3"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image4.jpg"
+              alt="Feature 4"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
+            <Image
+              src="/hero/image5.jpg"
+              alt="Feature 5"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
           <div className={styles.imageRow}>
-            <div className={styles.imagePlaceholder}></div>
+            <Image
+              src="/hero/image6.jpg"
+              alt="Feature 6"
+              width={200}
+              height={150}
+              className={styles.image}
+            />
           </div>
         </div>
       </div>

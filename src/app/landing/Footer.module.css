@@ -33,17 +33,20 @@
 }
 
 .subscribeButton {
-  padding: 12px 24px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #000;
-  border: none;
+  padding: 14px 32px; 
+  font-size: 16px; 
+  color: #ffffff;
+  background-color: #2d3748; 
+  border: none; 
   border-radius: 12px;
   cursor: pointer;
+  transition: all 0.3s ease; 
 }
 
 .subscribeButton:hover {
-  background-color: #333;
+  background-color: #1a202c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .subscriptionNote {
@@ -57,7 +60,7 @@
 }
 
 .linksContainer {
-  max-width: 90vw; /* Match the hero section's responsive width */
+  max-width: 90vw; 
   margin: 0 auto;
   padding: 80px 5vw;
 }
@@ -65,7 +68,7 @@
 .links {
   display: flex;
   justify-content: space-between;
-  gap: 80px; /* Match the hero section's gap */
+  gap: 80px; 
   margin-bottom: 40px;
 }
 

@@ -1,0 +1,226 @@
+.pricing {
+  padding: 112px 5vw; /* Updated to match features section's 112px top and bottom padding */
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.header {
+  margin-bottom: 80px; /* Updated to match features section's header margin-bottom */
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  margin-bottom: 20px;
+}
+
+.dropdownLabel {
+  font-size: 1rem;
+  color: #333;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.dropdownSelect {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* Toggle Styles */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.toggleOption {
+  font-size: 1rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.toggleOption.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Plans and Cards */
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 80px; /* Added to match features section's featuresGridWrapper margin-bottom */
+}
+
+.planCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 32px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.planCard:hover {
+  transform: translateY(-5px);
+}
+
+.planCard.highlighted {
+  border: 2px solid #ff4d4f;
+}
+
+.planIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.iconPlaceholder {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 8px;
+}
+
+.planTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.planPrice {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.pricePeriod {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.features li {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.features li:before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+}
+
+.features .trialFeature {
+  color: #666;
+  font-style: italic;
+}
+
+.features .highlightedFeature {
+  color: #ff4d4f;
+  font-weight: 500;
+}
+
+.getStartedButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.getStartedButton:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .plans {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 80px; /* Ensure this persists in media queries */
+  }
+
+  .planCard {
+      width: 100%;
+      max-width: 400px;
+  }
+}

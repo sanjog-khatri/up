@@ -1,0 +1,154 @@
+.installation {
+  padding: 112px 5vw;
+  background-color: #ffffff;
+}
+
+.header {
+  margin-bottom: 80px; 
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 24px; 
+  color: #333;
+  text-align: center;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 32px; 
+  text-align: center;
+}
+
+.installContainer {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.installCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 32px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.installCard:hover {
+  transform: translateY(-5px);
+}
+
+.installImg {
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+  background-color: #f0f0f0;
+}
+
+.installData {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.installTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.installVersion {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.installDescription {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.features li {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.features li:before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+}
+
+.installButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.installButton:hover {
+  background-color: #333;
+}
+
+.buttonContainer {
+  width: 300px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* New rule to move the macOS Download button down */
+.installContainer .installCard:nth-child(3) .installButton {
+  margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .installContainer {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 80px; 
+  }
+
+  .installCard {
+      width: 100%;
+      max-width: 400px;
+  }
+
+  .buttonContainer {
+      width: 100%;
+      max-width: 400px;
+  }
+}

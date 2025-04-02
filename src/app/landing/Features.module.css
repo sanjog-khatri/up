@@ -1,0 +1,203 @@
+.features {
+  max-width: 96vw; /* Increased from 90vw to use more space safely */
+  margin: 0 auto;
+  padding: 112px 3vw; /* Reduced from 5vw to 2vw */
+  text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+}
+
+.header {
+  margin-bottom: 80px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: clamp(32px, 5vw, 56px); /* Responsive font size */
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+.subheading {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: #666;
+  max-width: clamp(600px, 70vw, 800px); /* Responsive max-width */
+  margin: 0 auto 32px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.featuresGridWrapper {
+  overflow: hidden; /* Keep this to contain the sliding animation */
+  margin-bottom: 80px;
+  margin-left: 0; /* Removed negative margin */
+  margin-right: 0; /* Removed negative margin */
+  width: 100%; /* Ensure it fits within parent */
+}
+
+.featuresGrid {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(16px, 2vw, 48px); /* Responsive gap */
+  animation: slideLeft 30s linear infinite;
+  width: max-content; /* Allow natural width for animation */
+  min-width: 100%; /* Ensure it doesn’t shrink below viewport */
+}
+
+.featureCard {
+  flex: 0 0 clamp(200px, calc((96vw - 96px) / 3.5), 300px); /* Responsive width */
+  text-align: center;
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: clamp(180px, 40vh, 280px);
+  background: #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.cardHeading {
+  font-size: clamp(16px, 2vw, 20px); /* Responsive font size */
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 10px;
+  word-wrap: break-word;
+}
+
+.cardText {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center; /* Changed to center for consistency */
+  gap: clamp(8px, 1vw, 16px); /* Responsive gap */
+  margin-bottom: 80px;
+}
+
+.learnMoreButton,
+.signUpButton {
+  padding: clamp(10px, 1.5vw, 12px) clamp(16px, 2vw, 24px); /* Responsive padding */
+  font-size: clamp(14px, 1.8vw, 16px); /* Responsive font size */
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap; /* Prevent button text wrapping */
+  box-sizing: border-box;
+}
+
+.learnMoreButton {
+  background: #000000;
+  margin-left: 0; /* Removed negative margin */
+  border: 1px solid #000000;
+  color: white;
+}
+
+.learnMoreButton:hover {
+  background: #333;
+}
+
+.signUpButton {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+}
+
+.signUpButton:hover {
+  background: #f1f1f1;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .features {
+    padding: 112px 3vw; /* Slightly more padding than 2vw for medium screens */
+  }
+
+  .featuresGrid {
+    flex-direction: column;
+    animation: none;
+    width: 100%; /* Reset width for column layout */
+  }
+
+  .featureCard {
+    flex: 1;
+    width: 100%; /* Full width in column mode */
+    max-width: clamp(300px, 80vw, 400px); /* Responsive max-width */
+  }
+
+  .heading {
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  .subheading {
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+  }
+
+  .imagePlaceholder {
+    height: clamp(80px, 15vh, 150px);
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .learnMoreButton,
+  .signUpButton {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto; /* Centered in column layout */
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 112px 2vw;
+  }
+
+  .heading {
+    font-size: clamp(24px, 4vw, 32px);
+  }
+
+  .subheading {
+    font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+  }
+
+  .imagePlaceholder {
+    height: clamp(60px, 10vh, 120px);
+  }
+}

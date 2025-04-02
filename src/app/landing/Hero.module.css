@@ -1,0 +1,148 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 0 5vw;  
+  background-color: #FFFFFF;
+  gap: 80px; 
+  overflow-x: hidden; 
+}
+
+.textContent {
+  max-width: 40vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 56px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  color: #000000;
+  font-weight: 700;
+}
+
+.subheading {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1vw;
+}
+
+.getStartedButton {
+  padding: 12px 24px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.getStartedButton:hover {
+  background-color: #333;
+}
+
+.learnMoreButton {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.learnMoreButton:hover {
+  background-color: #f1f1f1;
+}
+
+.imageGrid {
+  max-width: 40vw;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  animation: scrollUp 30s linear infinite;
+}
+
+.imageRow {
+  display: flex;
+  gap: 1.5vh;
+  margin-bottom: 1.5vh;
+}
+
+.imagePlaceholder {
+  flex: 1;
+  height: clamp(180px, 40vh, 280px);
+  background-color: #e0e0e0;
+  border-radius: 8px;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    gap: 2vh;
+    padding: 1vh 3vw;
+    height: auto;
+    min-height: calc(100vh - 100px);
+  }
+
+  .textContent {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .imageGrid {
+    max-width: 100%;
+    height: 40vh;
+  }
+
+  .imagePlaceholder {
+    height: clamp(80px, 15vh, 150px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0.5vh 2vw;
+  }
+
+  .imageGrid {
+    height: 30vh;
+  }
+
+  .imagePlaceholder {
+    height: clamp(60px, 10vh, 120px);
+  }
+}

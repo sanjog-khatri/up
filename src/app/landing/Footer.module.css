@@ -1,0 +1,122 @@
+.footer {
+  background-color: #fff;
+}
+
+.subscriptionContainer {
+  max-width: 90vw; /* Match the hero section's responsive width */
+  margin: 0 auto;
+  padding: 80px 5vw;
+  text-align: center;
+}
+
+.subscriptionHeading {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.subscriptionForm {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.emailInput {
+  padding: 12px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.subscribeButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.subscribeButton:hover {
+  background-color: #333;
+}
+
+.subscriptionNote {
+  font-size: 14px;
+  color: #666;
+}
+
+.link {
+  color: #000;
+  text-decoration: underline;
+}
+
+.linksContainer {
+  max-width: 90vw; /* Match the hero section's responsive width */
+  margin: 0 auto;
+  padding: 80px 5vw;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px; /* Match the hero section's gap */
+  margin-bottom: 40px;
+}
+
+.linkColumn {
+  flex: 1;
+}
+
+.linkHeading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+}
+
+.linkList li {
+  margin-bottom: 8px;
+}
+
+.link {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* New bottom section to hold logo and copyright */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Adjust logo image */
+.logoImage {
+  height: 40px;
+}
+
+/* Remove absolute positioning for copyright */
+.copyright {
+  font-size: 14px;
+  color: #666;
+}
+
+.copyright p {
+  margin: 0;
+}

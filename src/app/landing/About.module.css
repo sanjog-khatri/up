@@ -1,0 +1,47 @@
+.about {
+  padding: 112px 5vw; 
+  background-color: #fff; 
+}
+
+.container {
+  max-width: 90vw; /* Match the hero section's responsive width */
+  margin: 0 auto; 
+  display: flex;
+  justify-content: space-between; /* Push textContent to the left and imagePlaceholder to the right */
+  gap: 80px; /* Match the hero section's gap */
+  padding: 0; 
+}
+
+.textContent {
+  width: 540px; 
+  padding: 64px 0; 
+}
+
+.logoPlaceholder {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  margin-bottom: 24px; 
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  max-width: 460px;
+}
+
+.imagePlaceholder {
+  width: 640px; 
+  height: 640px; 
+  background-color: #e0e0e0; 
+  border: 1px solid #ccc; 
+}

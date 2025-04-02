@@ -1,0 +1,103 @@
+.solution {
+  padding: 112px 5vw; /* Updated from 112px 0 to 112px 5vw */
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.featureCard {
+  width: 360px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto auto 1fr; /* Icon, title, description */
+  align-items: start;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 24px;
+  grid-row: 1;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.featureTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #000;
+  grid-row: 2;
+}
+
+.featureDescription {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  grid-row: 3;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.learnMoreButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #000;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.learnMoreButton:hover {
+  background-color: #333;
+}
+
+.signUpButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.signUpButton:hover {
+  background-color: #f1f1f1;
+}

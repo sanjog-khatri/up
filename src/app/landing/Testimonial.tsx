@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import styles from './Testimonial.module.css';
 
 const Testimonial = () => {
@@ -29,7 +30,6 @@ const Testimonial = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    // Add a check to ensure testimonials exists and has length
     if (!testimonials || testimonials.length === 0) return;
 
     const interval = setInterval(() => {
@@ -37,7 +37,7 @@ const Testimonial = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []); // Remove testimonials.length from dependency array since it's a constant
+  }, []); 
 
   const handleNext = () => {
     if (!testimonials || testimonials.length === 0) return;
@@ -113,7 +113,9 @@ const Testimonial = () => {
             Experience the future of web hosting management with a free trial of ULTRAPANEL.
           </p>
           <div className={styles.ctaButtons}>
+          <Link href="/auth/signup">
             <button className={styles.signUpButton}>Sign Up</button>
+          </Link>
             <button className={styles.learnMoreButton}>Learn More</button>
           </div>
         </div>

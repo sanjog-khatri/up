@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import styles from './Features.module.css';
+import Link from 'next/link';
 
 const Features = () => {
   // Define all six cards with image sources
@@ -72,7 +73,9 @@ const Features = () => {
 
       <div className={styles.buttons}>
         <button className={styles.learnMoreButton}>Learn More</button>
-        <button className={styles.signUpButton}>Sign Up</button>
+        <Link href="/auth/signup">
+          <button className={styles.signUpButton}>Sign Up</button>
+        </Link>
       </div>
     </section>
   );

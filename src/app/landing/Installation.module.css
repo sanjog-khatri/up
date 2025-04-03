@@ -1,16 +1,17 @@
 .installation {
-  padding: 112px 5vw;
+  margin-top: 0px;
+  margin-bottom: 80px;
   background-color: #ffffff;
 }
 
 .header {
-  margin-bottom: 80px; 
+  margin-bottom: 80px;
 }
 
 .heading {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
   color: #333;
   text-align: center;
 }
@@ -18,7 +19,7 @@
 .subheading {
   font-size: 1.1rem;
   color: #666;
-  margin-bottom: 32px; 
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -107,23 +108,23 @@
 
 .installButton {
   width: 80%;
-  padding: 14px 32px; 
-  background-color: #2d3748; 
-  color: #ffffff; 
-  border: none; 
+  padding: 14px 32px;
+  background-color: #2d3748;
+  color: #ffffff;
+  border: none;
   border-radius: 12px;
-  font-size: 16px; 
-  font-weight: 600; 
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .installButton:hover {
   background-color: #1a202c;
-  transform: translateY(-2px); 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .buttonContainer {
@@ -139,18 +140,18 @@
 
 @media (max-width: 768px) {
   .installContainer {
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 80px; 
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
   }
 
   .installCard {
-      width: 100%;
-      max-width: 400px;
+    width: 100%;
+    max-width: 400px;
   }
 
   .buttonContainer {
-      width: 100%;
-      max-width: 400px;
+    width: 100%;
+    max-width: 400px;
   }
 }

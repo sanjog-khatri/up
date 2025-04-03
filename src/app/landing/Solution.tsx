@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './Solution.module.css';
 
 const Solution = () => {
@@ -43,7 +44,9 @@ const Solution = () => {
         </div>
         <div className={styles.buttons}>
           <button className={styles.learnMoreButton}>Learn More</button>
+        <Link href="/auth/signup">
           <button className={styles.signUpButton}>Sign Up</button>
+        </Link>
         </div>
       </div>
     </section>

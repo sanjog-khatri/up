@@ -1,9 +1,10 @@
 .footer {
   background-color: #fff;
+  margin-top: 0px;
 }
 
 .subscriptionContainer {
-  max-width: 90vw; /* Match the hero section's responsive width */
+  max-width: 90vw; 
   margin: 0 auto;
   padding: 80px 5vw;
   text-align: center;

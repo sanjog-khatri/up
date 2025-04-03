@@ -1,11 +1,12 @@
 .pricing {
-  padding: 112px 5vw; /* Updated to match features section's 112px top and bottom padding */
+  margin-top: 0px;
+  margin-bottom: 80px;
   text-align: center;
   background-color: #ffffff;
 }
 
 .header {
-  margin-bottom: 80px; /* Updated to match features section's header margin-bottom */
+  margin-bottom: 80px;
 }
 
 .heading {
@@ -109,7 +110,7 @@ input:checked + .slider:before {
   justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
-  margin-bottom: 80px; /* Added to match features section's featuresGridWrapper margin-bottom */
+  margin-bottom: 80px;
 }
 
 .planCard {
@@ -138,8 +139,7 @@ input:checked + .slider:before {
 }
 
 .icon {
-  
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -196,21 +196,21 @@ input:checked + .slider:before {
 
 .getStartedButton {
   width: 100%;
-  padding: 14px 32px; 
+  padding: 14px 32px;
   background-color: #2d3748;
-  color: #ffffff; 
-  border: none; 
+  color: #ffffff;
+  border: none;
   border-radius: 12px;
-  font-size: 16px; 
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .getStartedButton:hover {
-  background-color: #1a202c; 
-  transform: translateY(-2px); 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  background-color: #1a202c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

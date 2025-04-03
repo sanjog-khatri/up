@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link'; 
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -14,7 +15,9 @@ const Hero = () => {
           ULTRAPANEL revolutionizes web hosting management by automating complex tasks and simplifying server configurations. Experience seamless domain administration and enhanced user authentication all in one intuitive platform.
         </p>
         <div className={styles.buttons}>
-          <button className={styles.getStartedButton}>Get Started</button>
+          <Link href="/auth/signup"> 
+            <button className={styles.getStartedButton}>Get Started</button>
+          </Link>
           <button className={styles.learnMoreButton}>Learn More</button>
         </div>
       </div>

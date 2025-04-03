@@ -40,7 +40,7 @@ const Footer = () => {
           <div className={styles.linkColumn}>
             <h3 className={styles.linkHeading}>Quick Links</h3>
             <ul className={styles.linkList}>
-              <li><a href="/nursing-courses" className={styles.link}>Nursing Courses</a></li>
+              <li><a href="/computer-courses" className={styles.link}>Computer Courses</a></li>
               <li><a href="/registration-info" className={styles.link}>Registration Info</a></li>
               <li><a href="/contact-us" className={styles.link}>Contact Us</a></li>
               <li><a href="/about-us" className={styles.link}>About Us</a></li>
@@ -83,7 +83,7 @@ const Footer = () => {
               <li><a href="/news-events" className={styles.link}>News and Events</a></li>
               <li><a href="/course-catalog" className={styles.link}>Course Catalog</a></li>
               <li><a href="/student-resources" className={styles.link}>Student Resources</a></li>
-              <li><a href="/nursing-community" className={styles.link}>Nursing Community</a></li>
+              <li><a href="/IT-community" className={styles.link}>IT Community</a></li>
             </ul>
           </div>
           <div className={styles.linkColumn}>
@@ -92,12 +92,12 @@ const Footer = () => {
               <li><a href="/latest-updates" className={styles.link}>Latest Updates</a></li>
               <li><a href="/upcoming-courses" className={styles.link}>Upcoming Courses</a></li>
               <li><a href="/student-testimonials" className={styles.link}>Student Testimonials</a></li>
-              <li><a href="/nursing-news" className={styles.link}>Nursing News</a></li>
+              <li><a href="/IT-news" className={styles.link}>IT News</a></li>
               <li><a href="/join-us" className={styles.link}>Join Us</a></li>
             </ul>
           </div>
         </div>
-        {/* Move logo and copyright below the links */}
+
         <div className={styles.bottomSection}>
           <div className={styles.logo}>
             <img src="/logo.png" alt="Logo" className={styles.logoImage} />

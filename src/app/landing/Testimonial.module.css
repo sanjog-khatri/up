@@ -1,6 +1,7 @@
 .testimonial {
   background: #ffffff;
   overflow: hidden;
+  margin-bottom: 25px;
 }
 
 .testimonialWrapper {
@@ -8,7 +9,7 @@
   margin: 0 auto;
   padding: 80px 5vw;
   position: relative;
-  min-height: 600px; /* Adjust this value based on your needs */
+  min-height: 600px; 
 }
 
 .testimonialContainer {

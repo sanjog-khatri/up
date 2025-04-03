@@ -1,0 +1,162 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    position: relative;
+    padding: 20px;
+    overflow: hidden; 
+  }
+  
+  .formWrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .link {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .linkAnchor {
+    color: #00c4b4;
+    text-decoration: none;
+  }
+  
+  .linkAnchor:hover {
+    text-decoration: underline;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input:focus {
+    border-color: #00c4b4;
+  }
+  
+  .nextButton {
+    background-color: #00c4b4;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+  }
+  
+  .nextButton:hover {
+    background-color: #00b3a3;
+    transform: scale(1.02);
+  }
+  
+  .socialLogin {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .socialLogin p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  
+  .socialButtons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .socialButton {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.2s ease;
+  }
+  
+  .socialButton:hover {
+    border-color: #00c4b4;
+    transform: scale(1.1); 
+  }
+  
+  .terms {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .termsLink {
+    color: #00c4b4;
+    text-decoration: none;
+  }
+  
+  .termsLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* Decorative background elements */
+  .container::before,
+  .container::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    filter: blur(20px); 
+    opacity: 0.8; 
+  }
+  
+  .container::before {
+    width: 1000px;
+    height: 1000px;
+    bottom: 0;
+    left: 0;
+    background: #007bff; 
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+  
+  .container::after {
+    width: 1000px; /* Increased size to cover more area */
+    height: 1000px;
+    top: 0;
+    right: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cpattern id='pattern' patternUnits='userSpaceOnUse' width='10' height='10' patternTransform='rotate(45)'%3E%3Cline x1='0' y1='0' x2='0' y2='10' stroke='%23ADD8E6' stroke-width='2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23pattern)'/%3E%3C/svg%3E");
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }

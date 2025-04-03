@@ -15,7 +15,9 @@ const Header = () => {
         <Link href="/services" className={styles.navLink}>Services</Link>
       </nav>
       <div className={styles.buttons}>
-        <button className={styles.applyButton}>Apply</button>
+        <Link href="/auth/signup">
+          <button className={styles.applyButton}>Apply</button>
+        </Link>
         <button className={styles.contactButton}>Contact</button>
       </div>
     </header>
